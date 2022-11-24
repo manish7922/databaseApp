@@ -22,7 +22,7 @@ let connData = {
   database: "data",
   insecureAuth: true,
 };
-let port = 2410;
+var port = process.env.PORT || 2410;
 // function showPersons() {
 //   let connectin = mysql.createConnection(connData);
 //   let sql = "SELECT * FROM purchases";
