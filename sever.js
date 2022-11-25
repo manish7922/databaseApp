@@ -10,8 +10,8 @@ const client = new Client({
   port: 5432,
   host: "ec2-52-1-17-228.compute-1.amazonaws.com",
   ssl: { rejectUnauthorized: false },
-  idleTimeoutMillis: 0,
-  connectionTimeoutMillis: 0,
+//   idleTimeoutMillis: 0,
+//   connectionTimeoutMillis: 0,
 });
 
 app.use(function (req, res, next) {
