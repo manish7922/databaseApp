@@ -9,7 +9,7 @@ const client = new Client({
   database: "postgres",
   port: 5432,
   host: "db.wopbctvhsjxrljomvuhi.supabase.co",
-  ssl: { rejectUnauthorized: false },
+  // ssl: { rejectUnauthorized: false },
   //   idleTimeoutMillis: 0,
   //   connectionTimeoutMillis: 0,
 });
