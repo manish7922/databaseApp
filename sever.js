@@ -4,14 +4,14 @@ app.use(express.json());
 let { Client } = require("pg");
 
 const client = new Client({
-  user: "chvgzpxemdqdfv",
-  password: "9472fe0cef1007a5b61a70c534a52be91ea0b605f728973769026ba361bbc653",
-  database: "d16aj1898f1cko",
+  user: "postgres",
+  password: "Manish@79834",
+  database: "postgres",
   port: 5432,
-  host: "ec2-52-1-17-228.compute-1.amazonaws.com",
+  host: "db.wopbctvhsjxrljomvuhi.supabase.co",
   ssl: { rejectUnauthorized: false },
-//   idleTimeoutMillis: 0,
-//   connectionTimeoutMillis: 0,
+  //   idleTimeoutMillis: 0,
+  //   connectionTimeoutMillis: 0,
 });
 
 app.use(function (req, res, next) {
@@ -61,25 +61,25 @@ app.get("/purchases", function (req, res) {
   let values = [sort];
   console.log("Inside /users get api");
   const query = "SELECT * FROM purchases";
-  client.query(query, sort, function (err, result) {
+  client.query(query, function (err, result) {
     if (err) {
       res.status(400).send(err);
     }
     let results = result.rows;
-    if (sort === "QtyAsc")
-      results = results.sort((st1, st2) => st1.quantity - st2.quantity);
-    if (sort === "QtyDesc")
-      results = results.sort((st1, st2) => st2.quantity - st1.quantity);
-    if (sort === "ValueAsc")
-      results = results.sort(
-        (st1, st2) => st1.price * st1.quantity - st2.price * st2.quantity
-      );
-    if (sort === "ValueDesc")
-      results = results.sort(
-        (st1, st2) => st2.price * st2.quantity - st1.price * st1.quantity
-      );
-    res.send(results);
-    console.log(results);
+    // if (sort === "QtyAsc")
+    //   results = results.sort((st1, st2) => st1.quantity - st2.quantity);
+    // if (sort === "QtyDesc")
+    //   results = results.sort((st1, st2) => st2.quantity - st1.quantity);
+    // if (sort === "ValueAsc")
+    //   results = results.sort(
+    //     (st1, st2) => st1.price * st1.quantity - st2.price * st2.quantity
+    //   );
+    // if (sort === "ValueDesc")
+    //   results = results.sort(
+    //     (st1, st2) => st2.price * st2.quantity - st1.price * st1.quantity
+    //   );
+    res.send(result.rows);
+    console.log(result);
   });
 });
 app.post("/shops", function (req, res) {

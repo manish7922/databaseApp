@@ -149,10 +149,10 @@
   (4, 8, 15, 12),
   (1, 6, 5, 40);
 
-(  'Sector 25, Gurgaon',  28500 ),
-(  'Sector 53, Gurgaon',  37400 ),
-(  'GreaterKailash,Delhi',  63100 ),
-(  'MallofIndia,Noida',  54200 );
+('Sector 25, Gurgaon',  28500 ),
+('Sector 53, Gurgaon',  37400 ),
+('GreaterKailash,Delhi',  63100 ),
+('MallofIndia,Noida',  54200 );
 
 ('Pepsi Can', 'Soft Drinks', '300ml'),
   ('Pepsi PET', 'Soft Drinks', '500ml'),
